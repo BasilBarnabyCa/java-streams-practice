@@ -1,5 +1,6 @@
 package com.example.streamspractice;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,6 +42,15 @@ public class StreamTester {
                 .filter(person -> person.getAge() < 18)
                 .toList();
         minors.forEach(System.out::println);
+        System.out.println("--------------------------------------------------");
+
+        // Sort by age
+        System.out.println("Sorted by Age");
+        System.out.println("==============");
+        List<Person> sorted = people.stream()
+                .sorted(Comparator.comparing(Person::getAge).reversed().)
+                .toList();
+        sorted.forEach(System.out::println);
         System.out.println("--------------------------------------------------");
 
 
