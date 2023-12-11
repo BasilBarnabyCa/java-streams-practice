@@ -48,7 +48,7 @@ public class StreamTester {
         System.out.println("Sorted by Age");
         System.out.println("==============");
         List<Person> sorted = people.stream()
-                .sorted(Comparator.comparing(Person::getAge).reversed().)
+                .sorted(Comparator.comparing(Person::getAge).thenComparing(Person::getGender).reversed())
                 .toList();
         sorted.forEach(System.out::println);
         System.out.println("--------------------------------------------------");
